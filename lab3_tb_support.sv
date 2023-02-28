@@ -185,7 +185,7 @@ typedef enum {CORRECT, BADINPUT, TIMEOUT} user_t;
 	   7'b100_0110: val = 5'b0_1100; // C        
 	   7'b010_0001: val = 5'b0_1101; // d        
 	   7'b000_0110: val = 5'b0_1110; // E        
-	   7'b010_1110: val = 5'b0_1111; // F        
+	   7'b000_1110: val = 5'b0_1111; // F        
 	   default: val = 5'b1_0000;
 	 endcase
 	 return val;
