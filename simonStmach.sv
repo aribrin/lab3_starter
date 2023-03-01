@@ -80,10 +80,17 @@ module simonStmach (
        // what is next_state value, what are the conditions to update it?
        // what other counters should be checked and updated here? 
        // Refer to instructions document and the state diagram you created for checkpoint
+          //turn lights on
+          lightsAllSl = 1;
+          simonsTurn = 1;
+           
+       nxtState = IdlePause;
        end
-/*Similar to Idle, think of the logic to be added in other states(check below) 
+   /*Similar to Idle, think of the logic to be added in other states(check below) */
 
        IdlePause: begin
+        //turn lights off
+        lightsAllSl = 0;
        end
 
        Play: begin
@@ -102,7 +109,7 @@ module simonStmach (
 
        Fail: begin
        end
-*/
+
      endcase // unique case (curState)
    end // comb
 endmodule
