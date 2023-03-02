@@ -83,6 +83,7 @@ module simonStmach (
           //turn lights on
           lightsAllSl = 1;
           simonsTurn = 1;
+          rndSeqRst = 1; //initialize sequence counter
            
        nxtState = IdlePause;
        end
@@ -91,13 +92,18 @@ module simonStmach (
        IdlePause: begin
         //turn lights off
         lightsAllSl = 0;
+        nxtState = Play;
        end
 
        Play: begin
-
+        //initialize simon Timer to 1750 ms  : simonTimer <-# corresponding to  1750 ms
+        
+        rndSeqEn = 1;
+        nxtState = PlayPause;
        end
 
        PlayPause: begin
+           if(seqEqScore)
        end
 
        Rec: begin
@@ -108,6 +114,7 @@ module simonStmach (
        end
 
        Fail: begin
+           fini = 0;
        end
 
      endcase // unique case (curState)
